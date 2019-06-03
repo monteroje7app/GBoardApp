@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D9C2330122A1778200AE166D /* KpiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C2330022A1778200AE166D /* KpiTableViewCell.swift */; };
+		D9A521D422A5755900E9CEC8 /* KpiCellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A521D322A5755900E9CEC8 /* KpiCellStyle.swift */; };
+		D9A521D822A58B6300E9CEC8 /* KpiTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A521D722A58B6300E9CEC8 /* KpiTableViewCell2.swift */; };
 		D9DE3829229EFA19000F765A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE3828229EFA19000F765A /* AppDelegate.swift */; };
 		D9DE382B229EFA19000F765A /* KpiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DE382A229EFA19000F765A /* KpiViewController.swift */; };
 		D9DE382E229EFA1A000F765A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DE382C229EFA1A000F765A /* Main.storyboard */; };
@@ -19,7 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D9C2330022A1778200AE166D /* KpiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpiTableViewCell.swift; sourceTree = "<group>"; };
+		D9A521D322A5755900E9CEC8 /* KpiCellStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpiCellStyle.swift; sourceTree = "<group>"; };
+		D9A521D722A58B6300E9CEC8 /* KpiTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpiTableViewCell2.swift; sourceTree = "<group>"; };
 		D9DE3825229EFA19000F765A /* GBoardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBoardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DE3828229EFA19000F765A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9DE382A229EFA19000F765A /* KpiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpiViewController.swift; sourceTree = "<group>"; };
@@ -63,8 +65,9 @@
 			isa = PBXGroup;
 			children = (
 				D9DE3828229EFA19000F765A /* AppDelegate.swift */,
+				D9A521D322A5755900E9CEC8 /* KpiCellStyle.swift */,
 				D9DE382A229EFA19000F765A /* KpiViewController.swift */,
-				D9C2330022A1778200AE166D /* KpiTableViewCell.swift */,
+				D9A521D722A58B6300E9CEC8 /* KpiTableViewCell2.swift */,
 				D9DE382C229EFA1A000F765A /* Main.storyboard */,
 				D9DE383D229F00FD000F765A /* FocusType.swift */,
 				D9DE383F229F05BD000F765A /* Kpi.swift */,
@@ -147,8 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9C2330122A1778200AE166D /* KpiTableViewCell.swift in Sources */,
+				D9A521D422A5755900E9CEC8 /* KpiCellStyle.swift in Sources */,
 				D9DE3831229EFA1A000F765A /* GBoardApp.xcdatamodeld in Sources */,
+				D9A521D822A58B6300E9CEC8 /* KpiTableViewCell2.swift in Sources */,
 				D9DE3840229F05BD000F765A /* Kpi.swift in Sources */,
 				D9DE382B229EFA19000F765A /* KpiViewController.swift in Sources */,
 				D9DE383E229F00FD000F765A /* FocusType.swift in Sources */,

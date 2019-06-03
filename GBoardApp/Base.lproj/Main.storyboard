@@ -18,50 +18,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5k0-EV-er6" userLabel="tblKpi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5k0-EV-er6" userLabel="tblKpi">
                                 <rect key="frame" x="20" y="144" width="374" height="718"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="KpiTableViewCellIdentifier" rowHeight="111" id="YhQ-UJ-ETm" customClass="KpiTableViewCell" customModule="GBoardApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="111"/>
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="KpiTableViewCellIdentifier" id="g6s-zk-6YH" customClass="KpiTableViewCell2" customModule="GBoardApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YhQ-UJ-ETm" id="dmO-j9-52M" customClass="KpiTableViewCell" customModule="GBoardApp" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="110.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g6s-zk-6YH" id="fiU-sq-EJy">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="149.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6i-IU-2zp">
-                                                    <rect key="frame" x="-10" y="-10" width="394" height="130.5"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMy-5g-Gc3" customClass="KpiCellStyle" customModule="GBoardApp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="5" width="364" height="139.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wk4-Dy-sSf">
-                                                            <rect key="frame" x="20" y="20" width="354" height="90.5"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpI-PP-vHn" userLabel="LblKpiValue">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="90.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                                    <nil key="textColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg1-nD-Igz">
+                                                            <rect key="frame" x="265" y="0.0" width="94" height="139.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="wk4-Dy-sSf" firstAttribute="top" secondItem="f6i-IU-2zp" secondAttribute="top" constant="20" id="C4A-AX-Kfs"/>
-                                                        <constraint firstAttribute="trailing" secondItem="wk4-Dy-sSf" secondAttribute="trailing" constant="20" id="ZvY-9T-7yJ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="wk4-Dy-sSf" secondAttribute="bottom" constant="20" id="f2e-xx-BGj"/>
-                                                        <constraint firstItem="wk4-Dy-sSf" firstAttribute="leading" secondItem="f6i-IU-2zp" secondAttribute="leading" constant="20" id="wiO-WS-s7L"/>
+                                                        <constraint firstItem="qg1-nD-Igz" firstAttribute="top" secondItem="VMy-5g-Gc3" secondAttribute="top" id="3jD-wh-Isc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="qg1-nD-Igz" secondAttribute="trailing" constant="5" id="VKf-0r-9Vz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qg1-nD-Igz" secondAttribute="bottom" id="wtz-jZ-0eN"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eG-Ol-sBO">
+                                                    <rect key="frame" x="77" y="65" width="163" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="163" id="s1O-dm-kcZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="f6i-IU-2zp" secondAttribute="trailing" constant="-10" id="XfQ-TT-4aP"/>
-                                                <constraint firstItem="f6i-IU-2zp" firstAttribute="top" secondItem="dmO-j9-52M" secondAttribute="top" constant="-10" id="gdt-cu-kh1"/>
-                                                <constraint firstAttribute="bottom" secondItem="f6i-IU-2zp" secondAttribute="bottom" constant="-10" id="lHd-Nz-5LX"/>
-                                                <constraint firstItem="f6i-IU-2zp" firstAttribute="leading" secondItem="dmO-j9-52M" secondAttribute="leading" constant="-10" id="vrA-yO-2aX"/>
+                                                <constraint firstItem="VMy-5g-Gc3" firstAttribute="leading" secondItem="fiU-sq-EJy" secondAttribute="leading" id="7Mm-Q2-MOp"/>
+                                                <constraint firstItem="VMy-5g-Gc3" firstAttribute="centerY" secondItem="2eG-Ol-sBO" secondAttribute="centerY" id="FfI-6i-aIy"/>
+                                                <constraint firstItem="2eG-Ol-sBO" firstAttribute="top" secondItem="fiU-sq-EJy" secondAttribute="topMargin" constant="10" id="VXV-tx-roP"/>
+                                                <constraint firstAttribute="bottom" secondItem="VMy-5g-Gc3" secondAttribute="bottom" constant="5" id="XIo-bU-n4w"/>
+                                                <constraint firstItem="2eG-Ol-sBO" firstAttribute="leading" secondItem="fiU-sq-EJy" secondAttribute="leadingMargin" constant="57" id="fRf-ZB-sQl"/>
+                                                <constraint firstItem="VMy-5g-Gc3" firstAttribute="top" secondItem="fiU-sq-EJy" secondAttribute="top" constant="5" id="rSQ-cs-1CY"/>
+                                                <constraint firstAttribute="trailing" secondItem="VMy-5g-Gc3" secondAttribute="trailing" constant="10" id="sHm-FK-dV9"/>
+                                                <constraint firstItem="VMy-5g-Gc3" firstAttribute="centerY" secondItem="fiU-sq-EJy" secondAttribute="centerY" id="vpj-DU-p2C"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES"/>
+                                        </accessibility>
                                         <connections>
-                                            <outlet property="lblKpiValue" destination="dpI-PP-vHn" id="kN6-YJ-Cfk"/>
+                                            <outlet property="lblKpiTitle" destination="2eG-Ol-sBO" id="Dhl-Im-Oru"/>
+                                            <outlet property="lblKpiValue" destination="qg1-nD-Igz" id="Myw-73-iXd"/>
+                                            <outlet property="viewKpiCell" destination="VMy-5g-Gc3" id="auz-wY-Gke"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

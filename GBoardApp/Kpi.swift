@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 
 struct Kpi {
     
@@ -21,19 +23,28 @@ struct Kpi {
     
     
     static var kpiCount: Int = 3
-
+    
     
     
     
     func  kpiVyellow() -> Double {
         return (self.kpiVmax - self.kpiVmin)/3
-        
     }
     
     func  kpiVred() -> Double {
         return 2*(self.kpiVmax - self.kpiVmin)/3
     }
     
-   
+    func color() -> UIColor {
+        
+        switch self.kpiValue {
+            case kpiVred()...kpiVmax:
+                return UIColor.red
+            case kpiVyellow()..<kpiVred():
+                return UIColor.yellow
+            default:
+                return UIColor.green
+            }
+    }
     
 }

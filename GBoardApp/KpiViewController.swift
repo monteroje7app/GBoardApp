@@ -8,17 +8,12 @@
 
 import UIKit
 
-class KpiViewController
-: UIViewController {
-
+class KpiViewController: UIViewController {
+    
     @IBOutlet weak var tblKpi: UITableView!
     
-    
     let kpiFirst = Kpi(kpiTitle: "Ventas", kpiDescription: "Meta de Ventas del Mes", kpiVmax: 100.0, kpiVmin: 0.0, kpiValue: 75.0, kpiFocus: .financial)
-    
     let kpiSecond = Kpi(kpiTitle: "Compras", kpiDescription: "Meta de Compras del Mes", kpiVmax: 100.0, kpiVmin: 0.0, kpiValue: 34, kpiFocus: .customer)
-    
-    
     let kpiThird = Kpi(kpiTitle: "Rechazos", kpiDescription: "Meta de Rechazos del Mes", kpiVmax: 100.0, kpiVmin: 0.0, kpiValue: 2, kpiFocus: .growth)
     
     var allKpiArray : [Kpi] = []
@@ -36,9 +31,9 @@ class KpiViewController
         
         debugPrint("Primer KPI \(kpiFirst.kpiDescription)")
     }
-
-  
-
+    
+    
+    
     
     deinit {
         
@@ -52,26 +47,26 @@ extension KpiViewController: UITableViewDelegate {
 }
 
 extension KpiViewController: UITableViewDataSource {
-   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return    allKpiArray.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellId = "KpiTableViewCellIdentifier"
         
-      let tableViewCell = tableView.dequeueReusableCell(withIdentifier: cellId)
-      
-        if let KpiTableViewCell = tableViewCell as? KpiTableViewCell
-    {
-            
-            let kpiValueSpec = allKpiArray[indexPath.row].kpiValue
+        let tableViewCell = tableView.dequeueReusableCell(withIdentifier: cellId)
         
-        KpiTableViewCell.configure(value: kpiValueSpec)
+        if let kpiTableViewCell = tableViewCell as? KpiTableViewCell2
+        {
             
-        return KpiTableViewCell
+            let kpiValueSpec = allKpiArray[indexPath.row]
+            
+            kpiTableViewCell.configure(value: kpiValueSpec)
+            
+            
+            return kpiTableViewCell
         }
         
         return tableViewCell!
