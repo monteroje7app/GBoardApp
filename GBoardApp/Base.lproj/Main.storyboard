@@ -33,10 +33,19 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMy-5g-Gc3" customClass="KpiCellStyle" customModule="GBoardApp" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="5" width="364" height="139.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg1-nD-Igz">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg1-nD-Igz">
                                                             <rect key="frame" x="265" y="0.0" width="94" height="139.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eG-Ol-sBO">
+                                                            <rect key="frame" x="8" y="8" width="249" height="32"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="249" id="s1O-dm-kcZ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -44,25 +53,16 @@
                                                     <constraints>
                                                         <constraint firstItem="qg1-nD-Igz" firstAttribute="top" secondItem="VMy-5g-Gc3" secondAttribute="top" id="3jD-wh-Isc"/>
                                                         <constraint firstAttribute="trailing" secondItem="qg1-nD-Igz" secondAttribute="trailing" constant="5" id="VKf-0r-9Vz"/>
+                                                        <constraint firstAttribute="centerY" secondItem="2eG-Ol-sBO" secondAttribute="centerY" constant="45.75" id="W9S-EX-DrD"/>
+                                                        <constraint firstItem="2eG-Ol-sBO" firstAttribute="leading" secondItem="VMy-5g-Gc3" secondAttribute="leadingMargin" id="bkY-ZA-N0L"/>
+                                                        <constraint firstItem="2eG-Ol-sBO" firstAttribute="top" secondItem="VMy-5g-Gc3" secondAttribute="topMargin" id="qFT-DZ-BE4"/>
                                                         <constraint firstAttribute="bottom" secondItem="qg1-nD-Igz" secondAttribute="bottom" id="wtz-jZ-0eN"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eG-Ol-sBO">
-                                                    <rect key="frame" x="77" y="65" width="163" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="163" id="s1O-dm-kcZ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="VMy-5g-Gc3" firstAttribute="leading" secondItem="fiU-sq-EJy" secondAttribute="leading" id="7Mm-Q2-MOp"/>
-                                                <constraint firstItem="VMy-5g-Gc3" firstAttribute="centerY" secondItem="2eG-Ol-sBO" secondAttribute="centerY" id="FfI-6i-aIy"/>
-                                                <constraint firstItem="2eG-Ol-sBO" firstAttribute="top" secondItem="fiU-sq-EJy" secondAttribute="topMargin" constant="10" id="VXV-tx-roP"/>
                                                 <constraint firstAttribute="bottom" secondItem="VMy-5g-Gc3" secondAttribute="bottom" constant="5" id="XIo-bU-n4w"/>
-                                                <constraint firstItem="2eG-Ol-sBO" firstAttribute="leading" secondItem="fiU-sq-EJy" secondAttribute="leadingMargin" constant="57" id="fRf-ZB-sQl"/>
                                                 <constraint firstItem="VMy-5g-Gc3" firstAttribute="top" secondItem="fiU-sq-EJy" secondAttribute="top" constant="5" id="rSQ-cs-1CY"/>
                                                 <constraint firstAttribute="trailing" secondItem="VMy-5g-Gc3" secondAttribute="trailing" constant="10" id="sHm-FK-dV9"/>
                                                 <constraint firstItem="VMy-5g-Gc3" firstAttribute="centerY" secondItem="fiU-sq-EJy" secondAttribute="centerY" id="vpj-DU-p2C"/>
