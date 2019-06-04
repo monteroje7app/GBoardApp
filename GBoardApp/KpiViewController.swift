@@ -48,10 +48,10 @@ class KpiViewController: UIViewController {
         kpiSearcher.obscuresBackgroundDuringPresentation = false
         tblKpi.tableHeaderView = kpiSearcher.searchBar
         
-       
+        kpiSearcher.searchBar.scopeButtonTitles = ["All", "Finacial", "Customer", "Process","Growth"]
+        kpiSearcher.searchBar.delegate = self
     }
-    
-    
+
     
     
     deinit {
@@ -62,9 +62,18 @@ class KpiViewController: UIViewController {
     
     func kpiFilter(_ searchText: String, scope: String = "All") -> [Kpi] {
         return allKpiArray.filter { (kpiTexto) -> Bool in
-            kpiTexto.kpiTitle.lowercased().hasPrefix(searchText.lowercased())
+            
+            let doesFocusMatch = (scope == "All") || (kpiTexto.kpiFocus.rawValue.lowercased() == scope.lowercased())
+            
+            if searchBarIsEmpty() {
+                return doesFocusMatch
+            } else {
+                return doesFocusMatch && kpiTexto.kpiTitle.lowercased().hasPrefix(searchText.lowercased())
+            }
         }
+          tblKpi.reloadData()
     }
+    
     
     func searchBarIsEmpty() -> Bool {
         return kpiSearcher.searchBar.text?.isEmpty ?? true
@@ -126,10 +135,10 @@ extension  KpiViewController:  UISearchResultsUpdating  {
     func updateSearchResults(for searchController: UISearchController) {
         debugPrint("Se ha presionado")
         
-        let textToFind = searchController.searchBar.text!
+        let textToFind = kpiSearcher.searchBar.text!
         kpiFiltered = kpiFilter(textToFind)
         
-        tblKpi.reloadData()
+      
     }
     
     
@@ -138,7 +147,14 @@ extension  KpiViewController:  UISearchResultsUpdating  {
 extension KpiViewController: UISearchBarDelegate {
     // MARK: - UISearchBar Delegate
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        kpiFilter(searchBar.text!, scope: searchBar.scopeButtonTitles![selectedScope])
+        
+        let searchBar = kpiSearcher.searchBar
+        let selectedScope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        
+        kpiFilter(searchBar.text!, scope: selectedScope)
+
     }
     
 }
+
+
