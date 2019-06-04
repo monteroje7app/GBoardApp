@@ -13,6 +13,7 @@ class KpiTableViewCell2: UITableViewCell {
     @IBOutlet weak var viewKpiCell: UIView!
     @IBOutlet weak var lblKpiValue: UILabel!
     @IBOutlet weak var lblKpiTitle: UILabel!
+    @IBOutlet weak var lblKpiFocus: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +30,7 @@ class KpiTableViewCell2: UITableViewCell {
     func configure(value: Kpi)  {
         viewKpiCell.backgroundColor = value.color()
         lblKpiValue.text = String(value.kpiValue)
-        
+        lblKpiFocus.text =  value.kpiFocus.rawValue
      
         lblKpiTitle.text = value.kpiTitle
 

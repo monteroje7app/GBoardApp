@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum FocusType  {
+enum FocusType  : String {
     case financial
     case customer
     case process
