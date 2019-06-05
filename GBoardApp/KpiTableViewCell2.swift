@@ -14,7 +14,9 @@ class KpiTableViewCell2: UITableViewCell {
     @IBOutlet weak var lblKpiValue: UILabel!
     @IBOutlet weak var lblKpiTitle: UILabel!
     @IBOutlet weak var lblKpiFocus: UILabel!
+    @IBOutlet weak var lblKpiMin: UILabel!
     
+    @IBOutlet weak var lblKpiMax: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,9 +33,10 @@ class KpiTableViewCell2: UITableViewCell {
         viewKpiCell.backgroundColor = value.color()
         lblKpiValue.text = String(value.kpiValue)
         lblKpiFocus.text =  value.kpiFocus.rawValue
-     
+        lblKpiMax.text = String(value.kpiVmax)
+        lblKpiMin.text = String(value.kpiVmin)
         lblKpiTitle.text = value.kpiTitle
-
+        
         
     }
     
