@@ -142,20 +142,31 @@
             </objects>
             <point key="canvasLocation" x="-487" y="110"/>
         </scene>
-        <!--View Controller-->
+        <!--Setup View Controller-->
         <scene sceneID="0AI-OA-feo">
             <objects>
-                <viewController id="kZB-PS-vxi" sceneMemberID="viewController">
+                <viewController id="kZB-PS-vxi" customClass="SetupViewController" customModule="GBoardApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ttd-tR-wCw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DZ-27-ToD">
+                                <rect key="frame" x="41" y="215" width="340" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Update KPI from Server"/>
+                                <connections>
+                                    <action selector="btnUpdatePressed:" destination="kZB-PS-vxi" eventType="touchUpInside" id="9aq-v6-HNZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3so-7n-dbr"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bp8-dy-46D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="488" y="101"/>
+            <point key="canvasLocation" x="486.95652173913049" y="100.44642857142857"/>
         </scene>
     </scenes>
 </document>
