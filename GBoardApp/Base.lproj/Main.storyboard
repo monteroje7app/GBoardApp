@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cri-J0-ssm">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,26 +10,50 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="W5F-Bj-GYW">
+            <objects>
+                <navigationController id="cri-J0-ssm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DXp-dz-ok8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="abl-qG-yCu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2a-ta-Ea8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1535" y="110"/>
+        </scene>
         <!--Kpis Scene-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="KPIScene" id="BYZ-38-t0r" userLabel="Kpis Scene" customClass="KpiViewController" customModule="GBoardApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="KPIScene" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" userLabel="Kpis Scene" customClass="KpiViewController" customModule="GBoardApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5k0-EV-er6" userLabel="tblKpi">
-                                <rect key="frame" x="20" y="169" width="374" height="693"/>
+                                <rect key="frame" x="20" y="88" width="374" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="9Uj-UD-QoV">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                <searchBar key="tableHeaderView" contentMode="scaleToFill" searchBarStyle="minimal" showsScopeBar="YES" id="9Uj-UD-QoV">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <scopeButtonTitles>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                        <string>Title</string>
+                                    </scopeButtonTitles>
                                 </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="KpiTableViewCellIdentifier" id="g6s-zk-6YH" customClass="KpiTableViewCell2" customModule="GBoardApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="374" height="150"/>
+                                        <rect key="frame" x="0.0" y="84" width="374" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g6s-zk-6YH" id="fiU-sq-EJy">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="149.5"/>
@@ -97,19 +121,41 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5k0-EV-er6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CVb-Rz-a5g"/>
-                            <constraint firstItem="5k0-EV-er6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="Iy5-Ra-8SF"/>
+                            <constraint firstItem="5k0-EV-er6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Iy5-Ra-8SF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5k0-EV-er6" secondAttribute="trailing" constant="20" id="SMZ-4i-KWs"/>
                             <constraint firstItem="5k0-EV-er6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="T8j-I4-Kgo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="HIr-UT-h3a">
+                        <barButtonItem key="rightBarButtonItem" title="🌐" id="fzX-0g-H6e">
+                            <connections>
+                                <segue destination="kZB-PS-vxi" kind="show" id="ICd-2p-bIu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tblKpi" destination="5k0-EV-er6" id="5r6-6V-PFW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
+            <point key="canvasLocation" x="-487" y="110"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0AI-OA-feo">
+            <objects>
+                <viewController id="kZB-PS-vxi" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ttd-tR-wCw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3so-7n-dbr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bp8-dy-46D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="101"/>
         </scene>
     </scenes>
 </document>

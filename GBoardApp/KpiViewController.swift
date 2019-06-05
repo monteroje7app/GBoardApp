@@ -19,6 +19,9 @@ class KpiViewController: UIViewController {
     let kpiFirst = Kpi(kpiTitle: "Ventas", kpiDescription: "Meta de Ventas del Mes", kpiVmax: 100.0, kpiVmin: 0.0, kpiValue: 75.0, kpiFocus: .financial)
     let kpiSecond = Kpi(kpiTitle: "Compras", kpiDescription: "Meta de Compras del Mes", kpiVmax: 100.0, kpiVmin: 0.0, kpiValue: 34, kpiFocus: .customer)
     let kpiThird = Kpi(kpiTitle: "Rechazos", kpiDescription: "Meta de Rechazos del Mes", kpiVmax: 100.0, kpiVmin: 0.0, kpiValue: 2, kpiFocus: .growth)
+    let kpiFourth = Kpi(kpiTitle: "Alquiler", kpiDescription: "Meta de Ventas del Mes", kpiVmax: 100.0, kpiVmin: 0.0, kpiValue: 23, kpiFocus: .financial)
+    let kpiFifth = Kpi(kpiTitle: "Subcripciones", kpiDescription: "Meta de Compras del Mes", kpiVmax: 100.0, kpiVmin: 0.0, kpiValue: 99, kpiFocus: .customer)
+    let kpisixth = Kpi(kpiTitle: "Entrenamientos", kpiDescription: "Meta de Rechazos del Mes", kpiVmax: 100.0, kpiVmin: 0.0, kpiValue: 32, kpiFocus: .process)
     
     
     var allKpiArray : [Kpi] = []
@@ -37,7 +40,9 @@ class KpiViewController: UIViewController {
         tblKpi.dataSource = self
         
         
-        allKpiArray = [kpiFirst, kpiSecond, kpiThird]
+        allKpiArray = [kpiFirst, kpiSecond, kpiThird, kpiFourth, kpiFifth, kpisixth]
+        
+        kpiFiltered = allKpiArray
         
         tblKpi.tableHeaderView = viewFocusFilters
         
@@ -48,7 +53,8 @@ class KpiViewController: UIViewController {
         kpiSearcher.obscuresBackgroundDuringPresentation = false
         tblKpi.tableHeaderView = kpiSearcher.searchBar
         
-        kpiSearcher.searchBar.scopeButtonTitles = ["All", "Finacial", "Customer", "Process","Growth"]
+       kpiSearcher.searchBar.scopeButtonTitles = ["All", "Financial", "Customer", "Process","Growth"]
+        kpiSearcher.searchBar.showsScopeBar = true
         kpiSearcher.searchBar.delegate = self
     }
 
@@ -60,20 +66,29 @@ class KpiViewController: UIViewController {
     }
     
     
-    func kpiFilter(_ searchText: String, scope: String = "All") -> [Kpi] {
-        return allKpiArray.filter { (kpiTexto) -> Bool in
+    func kpiFilter(_ searchText: String, scope: String = "All")   {
+        
+        kpiFiltered = allKpiArray.filter ({ ( kpiTexto : Kpi ) -> Bool in
             
-            let doesFocusMatch = (scope == "All") || (kpiTexto.kpiFocus.rawValue.lowercased() == scope.lowercased())
+       let doesFocusMatch = (scope == "All") || (kpiTexto.kpiFocus.rawValue.lowercased() == scope.lowercased())
+            
+    //        let filterdObject = cars.filter { $0.model == currModel || colors.contains($0.color) }
+            
             
             if searchBarIsEmpty() {
-                return doesFocusMatch
+                if scope == "All" {
+                    return true
+                }else{
+                    return  kpiTexto.kpiFocus.rawValue.lowercased() == scope.lowercased()
+                }
+                
             } else {
-                return doesFocusMatch && kpiTexto.kpiTitle.lowercased().hasPrefix(searchText.lowercased())
-            }
-        }
-          tblKpi.reloadData()
+     
+                    return doesFocusMatch && kpiTexto.kpiTitle.lowercased().hasPrefix(searchText.lowercased())}
+            
+        })
+        tblKpi.reloadData()
     }
-    
     
     func searchBarIsEmpty() -> Bool {
         return kpiSearcher.searchBar.text?.isEmpty ?? true
@@ -93,12 +108,7 @@ extension KpiViewController: UITableViewDelegate {
 extension KpiViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        if searchBarIsEmpty() {
-            return allKpiArray.count
-        } else {
             return kpiFiltered.count
-        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -111,14 +121,9 @@ extension KpiViewController: UITableViewDataSource {
         {
             
             var kpiValueSpec : Kpi!
-            if searchBarIsEmpty() {
-                kpiValueSpec = allKpiArray[indexPath.row]
-            } else {
-                kpiValueSpec = kpiFiltered[indexPath.row]
-            }
+            kpiValueSpec = kpiFiltered[indexPath.row]
             kpiTableViewCell.configure(value: kpiValueSpec)
-            
-            
+    
             return kpiTableViewCell
         }
         
@@ -134,13 +139,11 @@ extension  KpiViewController:  UISearchResultsUpdating  {
     
     func updateSearchResults(for searchController: UISearchController) {
         debugPrint("Se ha presionado")
-        
-        let textToFind = kpiSearcher.searchBar.text!
-        kpiFiltered = kpiFilter(textToFind)
-        
-      
+        kpiFiltered = [Kpi]()
+        let searchBar = kpiSearcher.searchBar
+        let scope = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        kpiFilter(searchController.searchBar.text!, scope: scope)
     }
-    
     
 }
 
